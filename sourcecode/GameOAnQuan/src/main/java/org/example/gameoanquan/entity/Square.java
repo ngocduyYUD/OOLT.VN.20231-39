@@ -1,7 +1,7 @@
 package org.example.gameoanquan.entity;
 
 public class Square {
-    private int squareId; //squareId = 0  and 6 is Big Gem
+    private final int squareId; //squareId = 0  and 6 is Big Gem
     private int squarePoint; // 1 square = 5 point when game start
 
     public Square(int squareId) {
