@@ -1,4 +1,4 @@
-package org.example.gameoanquan.viewController;
+package org.example.gameoanquan.AppController;
 //home Screen, have button start, exit, and help
 public class HomeController {
 

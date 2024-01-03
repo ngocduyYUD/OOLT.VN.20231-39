@@ -1,4 +1,4 @@
-package org.example.gameoanquan.viewController;
+package org.example.gameoanquan.AppController;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
