@@ -26,7 +26,7 @@ public class GameApplication extends Application {
 
     public void showHomePanel() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("GameMenu.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("org/example/gameoanquan/sample/GameMenu.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
@@ -38,7 +38,7 @@ public class GameApplication extends Application {
 
     public void showGamePanel() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("GamePanel.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("org/example/gameoanquan/sample/GamePanel.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
@@ -49,7 +49,7 @@ public class GameApplication extends Application {
     }
     public void showHelp(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("help.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("org/example/gameoanquan/sample/help.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
