@@ -1,4 +1,4 @@
-package org.example.gameoanquan.sample;
+package org.example.gameoanquan.viewController;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

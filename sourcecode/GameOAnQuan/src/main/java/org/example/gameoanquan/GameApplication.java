@@ -4,7 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.example.gameoanquan.viewController.GameMenuController;
+
 import java.io.*;
 
 
@@ -26,7 +29,7 @@ public class GameApplication extends Application {
 
     public void showHomePanel() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("org/example/gameoanquan/sample/GameMenu.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GameMenu.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
@@ -38,7 +41,7 @@ public class GameApplication extends Application {
 
     public void showGamePanel() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("org/example/gameoanquan/sample/GamePanel.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GamePanel.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
@@ -49,11 +52,15 @@ public class GameApplication extends Application {
     }
     public void showHelp(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("org/example/gameoanquan/sample/help.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("help.fxml"));
             Parent root = loader.load();
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-            primaryStage.show();
+
+            // Tạo Stage mới để hiển thị màn hình Help
+            Stage helpStage = new Stage();
+            helpStage.initModality(Modality.APPLICATION_MODAL); // Đặt chế độ model
+            helpStage.setTitle("Game Help");
+            helpStage.setScene(new Scene(root));
+            helpStage.showAndWait(); // Hiển thị và chờ đến khi cửa sổ Help đóng đi để quay lại GameMenu
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,6 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameScreenController" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gameoanquan.viewController.GameScreenController">
+   <children>
+      <ImageView fx:id="gamePlayBG" fitHeight="343.0" fitWidth="613.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/background.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="exitGame" layoutX="627.0" layoutY="28.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="49.0" text="Exit" />
+      <Pane fx:id="square1" layoutX="124.0" layoutY="90.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <ImageView fx:id="directionR1" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/greenArrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL1" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="rightButton1" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton1" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Label fx:id="squarePoint1" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Label fx:id="playerPoint1" layoutX="256.0" layoutY="37.0" text="Player 1 point" />
+      <Label fx:id="playerPoint2" layoutX="256.0" layoutY="279.0" text="Player 2 point" />
+      <Pane fx:id="square0" layoutX="52.0" layoutY="125.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <Label fx:id="squarePoint0" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Pane fx:id="square6" layoutX="492.0" layoutY="124.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <Label fx:id="squarePoint6" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Pane fx:id="square2" layoutX="195.0" layoutY="90.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <ImageView fx:id="directionR2" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/greenArrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL2" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="rightButton2" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton2" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Label fx:id="squarePoint2" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Pane fx:id="square3" layoutX="268.0" layoutY="90.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <ImageView fx:id="directionR3" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/greenArrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL3" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="rightButton3" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton3" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Label fx:id="squarePoint3" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Pane fx:id="square4" layoutX="351.0" layoutY="90.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <ImageView fx:id="directionR4" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/greenArrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL4" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="rightButton4" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton4" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Label fx:id="squarePoint4" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Pane fx:id="square5" layoutX="422.0" layoutY="90.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <ImageView fx:id="directionR5" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/greenArrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL5" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="rightButton5" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton5" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Label fx:id="squarePoint5" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Pane fx:id="square7" layoutX="422.0" layoutY="168.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <ImageView fx:id="directionR7" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/greenArrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL7" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="rightButton7" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton7" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Label fx:id="squarePoint7" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Pane fx:id="square8" layoutX="351.0" layoutY="168.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <ImageView fx:id="directionR8" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/greenArrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL8" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="rightButton8" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton8" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Label fx:id="squarePoint8" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Pane fx:id="square9" layoutX="274.0" layoutY="168.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <ImageView fx:id="directionR9" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/greenArrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL9" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="rightButton9" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton9" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Label fx:id="squarePoint9" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Pane fx:id="square10" layoutX="195.0" layoutY="168.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <ImageView fx:id="directionR10" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/greenArrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL10" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="rightButton10" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton10" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Label fx:id="squarePoint10" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+      <Pane fx:id="square11" layoutX="124.0" layoutY="168.0" prefHeight="70.0" prefWidth="71.0">
+         <children>
+            <ImageView fx:id="directionR11" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/greenArrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL11" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="rightButton11" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton11" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Label fx:id="squarePoint11" layoutX="22.0" layoutY="27.0" text="point" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,4 +1,4 @@
-package org.example.gameoanquan.sample;
+package org.example.gameoanquan.viewController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,10 +18,10 @@ public class GamePanelController {
 
 
     @FXML
-    void handleExitButton(ActionEvent event) {
+    public void handleExitButton(ActionEvent event) {
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("GameMenu.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../../../resources/org/example/gameoanquan/GameMenu.fxml"));
             Parent root = loader.load();
 
 
@@ -36,10 +36,10 @@ public class GamePanelController {
         }
     }
     @FXML
-    void handleGame(ActionEvent event) {
+    public void handleGame(ActionEvent event) {
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScreen.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../../../resources/org/example/gameoanquan/GameScreen.fxml"));
             Parent root = loader.load();
 
 

@@ -1,4 +1,4 @@
-package org.example.gameoanquan.sample;
+package org.example.gameoanquan.viewController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,12 +18,14 @@ public class GameMenuController {
     @FXML
     private Button exitButtonHome;
     @FXML
-    private void playGame(ActionEvent event) {
-        GameApplication.getInstance().showGamePanel();
+    private Button playButton;
+    @FXML
+    public void playGame(ActionEvent event) {
+        GameApplication.getInstance().showGameScreen();
     }
 
     @FXML
-    private void exitHome(ActionEvent event) {
+    public void exitHome(ActionEvent event) {
         Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
         confirmationDialog.setTitle("Xác nhận thoát");
         confirmationDialog.setHeaderText(null);
@@ -48,20 +50,21 @@ public class GameMenuController {
     }
 
     @FXML
-    void help(ActionEvent event) {
-        try {
-            // Tạo FXMLLoader để tải màn hình Help từ tệp FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("help.fxml"));
-            Parent root = loader.load();
-
-            // Tạo Stage mới để hiển thị màn hình Help
-            Stage helpStage = new Stage();
-            helpStage.initModality(Modality.APPLICATION_MODAL); // Đặt chế độ modal
-            helpStage.setTitle("Game Help");
-            helpStage.setScene(new Scene(root));
-            helpStage.showAndWait(); // Hiển thị và chờ đến khi cửa sổ Help đóng đi để quay lại GameMenu
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void help(ActionEvent event) {
+        GameApplication.getInstance().showHelp();
+//        try {
+//            // Tạo FXMLLoader để tải màn hình Help từ tệp FXML
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../../../resources/org/example/gameoanquan/help.fxml"));
+//            Parent root = loader.load();
+//
+//            // Tạo Stage mới để hiển thị màn hình Help
+//            Stage helpStage = new Stage();
+//            helpStage.initModality(Modality.APPLICATION_MODAL); // Đặt chế độ model
+//            helpStage.setTitle("Game Help");
+//            helpStage.setScene(new Scene(root));
+//            helpStage.showAndWait(); // Hiển thị và chờ đến khi cửa sổ Help đóng đi để quay lại GameMenu
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }
