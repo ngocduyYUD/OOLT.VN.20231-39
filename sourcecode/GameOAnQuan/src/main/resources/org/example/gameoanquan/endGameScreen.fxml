@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gameoanquan.handler.EndGameHandler">
+   <children>
+      <ImageView fx:id="endBG" fitHeight="278.0" fitWidth="547.0" layoutX="-87.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/background.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player2Avatar" fitHeight="150.0" fitWidth="200.0" layoutX="125.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@images/player2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player1Avatar" fitHeight="116.0" fitWidth="125.0" layoutX="142.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/player11.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="notifyWinner" layoutX="31.0" layoutY="135.0" text="Riven Is Winner!">
+         <font>
+            <Font name="Cascadia Mono Regular" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
