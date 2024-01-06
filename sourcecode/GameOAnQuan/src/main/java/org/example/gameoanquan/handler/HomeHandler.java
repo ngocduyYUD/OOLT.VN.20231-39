@@ -1,31 +1,39 @@
-package org.example.gameoanquan.viewController;
+package org.example.gameoanquan.handler;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.gameoanquan.GameApplication;
+import org.example.gameoanquan.utlis.Configs;
 
-public class GameMenuController {
+import java.io.IOException;
+
+public class HomeHandler {
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
     @FXML
     private Button helpButton;
     @FXML
-    private Button exitButtonHome;
+    private Button exitButton;
     @FXML
     private Button playButton;
     @FXML
-    public void playGame(ActionEvent event) {
+    private void playGame(ActionEvent event)
+    {
         GameApplication.getInstance().showGameScreen();
     }
-
     @FXML
-    public void exitHome(ActionEvent event) {
+    public void exitGame(ActionEvent event) {
         Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
         confirmationDialog.setTitle("Xác nhận thoát");
         confirmationDialog.setHeaderText(null);
@@ -42,7 +50,7 @@ public class GameMenuController {
         confirmationDialog.showAndWait().ifPresent(response -> {
             if (response == yesButton) {
 
-                Stage stage = (Stage) exitButtonHome.getScene().getWindow();
+                Stage stage = (Stage) exitButton.getScene().getWindow();
                 stage.close();
             }
 
@@ -50,21 +58,8 @@ public class GameMenuController {
     }
 
     @FXML
-    public void help(ActionEvent event) {
+    public void openGuild(ActionEvent event) {
         GameApplication.getInstance().showHelp();
-//        try {
-//            // Tạo FXMLLoader để tải màn hình Help từ tệp FXML
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../../../resources/org/example/gameoanquan/help.fxml"));
-//            Parent root = loader.load();
-//
-//            // Tạo Stage mới để hiển thị màn hình Help
-//            Stage helpStage = new Stage();
-//            helpStage.initModality(Modality.APPLICATION_MODAL); // Đặt chế độ model
-//            helpStage.setTitle("Game Help");
-//            helpStage.setScene(new Scene(root));
-//            helpStage.showAndWait(); // Hiển thị và chờ đến khi cửa sổ Help đóng đi để quay lại GameMenu
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
+
 }

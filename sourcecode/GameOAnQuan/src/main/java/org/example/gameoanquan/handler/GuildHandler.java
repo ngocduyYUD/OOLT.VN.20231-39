@@ -1,11 +1,11 @@
-package org.example.gameoanquan.viewController;
+package org.example.gameoanquan.handler;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
-public class HelpController {
+public class GuildHandler {
     @FXML
     private Button closeButton;
 

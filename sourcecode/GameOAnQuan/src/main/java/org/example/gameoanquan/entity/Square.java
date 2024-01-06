@@ -20,4 +20,10 @@ public class Square {
     public void setSquarePoint(int squarePoint) {
         this.squarePoint = squarePoint;
     }
+
+    public void gemDrop()
+    {
+        squarePoint ++;
+    }
+
 }
