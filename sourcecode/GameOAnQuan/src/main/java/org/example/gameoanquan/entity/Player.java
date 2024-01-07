@@ -49,7 +49,7 @@ public class Player {
         return this.bigGemOwn.length * 5;
     }
 
-    public int spreadGem(int direction, int squareId, List<Square> broad) // direction = 0 = ben trai
+    public int spreadGem(int direction, int squareId, List<Square> broad) // tra ve square sau o duoc rai da cuoi cung
     {
         int spreadPoint = broad.get(squareId).getSquarePoint();
         int currentSquareId = broad.get(squareId).getSquareId();

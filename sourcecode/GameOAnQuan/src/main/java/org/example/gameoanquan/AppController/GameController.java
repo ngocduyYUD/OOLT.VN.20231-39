@@ -24,16 +24,23 @@ public class GameController {
     /*
     player sẽ rải đá hết phần đá sau đó sẽ chạy hàm point để xem có ăn điểm hay không
      */
-    public void gameMethod(Player player, int direction, int pickedSquare) //
+    public void gameMethod(Player player, int direction, int pickedSquare)
     {
-        int currentSquareId = pickedSquare;
+        if(player.getPlayerSquarePoint() == 0)
+        {
+            autoAddGem(player);
+        }
+        int currentSquareId;
+        int spreadSquare = pickedSquare;
         do{
-            currentSquareId = player.spreadGem(direction, currentSquareId, broad);
+            currentSquareId = player.spreadGem(direction, spreadSquare, broad);
+            spreadSquare = currentSquareId;
             if(playerPointCaculate(currentSquareId, player) == true)  //neu co su thay doi ve diem so
             {
                 break;
             }
-        }while (stopSpreadGem(currentSquareId));
+        }while (stopSpreadGem(currentSquareId));   //neu khong the rai da nua
+        updateSquarePoint();                       // sau moi lan rai da, update lai tong diem ben phan o cua nguoi choi
         if(!endGameCheck())
         {
             changeTurn();
@@ -81,11 +88,11 @@ public class GameController {
         if(player.getPlayerId() == 1)
         {
             for (int i = 1; i < 6; i++) {
-                this.broad.get(i).setSquarePoint(1);
+                broad.get(i).setSquarePoint(1);
             }
         } else if (player.getPlayerId() == 2) {
             for (int i = 7; i < 11; i++) {
-                this.broad.get(i).setSquarePoint(1);
+                broad.get(i).setSquarePoint(1);
             }
         }
         if(playerSmallGemPoint < 5)
@@ -93,10 +100,14 @@ public class GameController {
             if(player.getPlayerId() == 1)
             {
                 player.borrowGem(2, 5 - playerSmallGemPoint);
-                this.player2.setPlayerPoint(this.player2.getPlayerPoint() +5 - playerSmallGemPoint);
+                player2.borrowGem(1, - 5 + playerSmallGemPoint);
+                player.setPlayerPoint(player.getPlayerPoint() - playerSmallGemPoint);
+                player2.setPlayerPoint(player2.getPlayerPoint() +5 - playerSmallGemPoint);
             } else if (player.getPlayerId() == 2) {
                 player.borrowGem(1, 5 - playerSmallGemPoint);
-                this.player1.setPlayerPoint(this.player1.getPlayerPoint() +5 - playerSmallGemPoint);
+                player1.borrowGem(2, - 5 + playerSmallGemPoint);
+                player.setPlayerPoint(player.getPlayerPoint() - playerSmallGemPoint);
+                player1.setPlayerPoint(player1.getPlayerPoint() +5 - playerSmallGemPoint);
             }
         }
     }
@@ -129,10 +140,10 @@ public class GameController {
 
     public boolean endGameCheck()
     {
-        if(player1.getBigGemOwnPoint() + player2.getBigGemOwnPoint() == 10)     //khi het ca 2 quan, dan ben nao thi la diem ben do
+        if(broad.get(0).getSquarePoint() == 0 && broad.get(0).getSquarePoint() == 0)     //khi het ca 2 quan, dan ben nao thi la diem ben do
         {
-            player1.setPlayerPoint(player1.getPlayerPoint() + player1.getPlayerSquarePoint());
-            player2.setPlayerPoint(player2.getPlayerPoint()+player2.getPlayerSquarePoint());
+            player1.setPlayerPoint(player1.getPlayerPoint() + player1.getPlayerSquarePoint() - player1.getBorrowedGem());
+            player2.setPlayerPoint(player2.getPlayerPoint()+player2.getPlayerSquarePoint() - player2.getBorrowedGem());
             return true;
         }
         return false;
@@ -144,6 +155,19 @@ public class GameController {
             return 1;
         }
         return 2;
+    }
+    public void updateSquarePoint()
+    {
+        int total1 = 0;
+        int total2 = 0;
+        for (int i = 1; i < 6; i++) {
+            total1 = total1 + broad.get(i).getSquarePoint();
+        }
+        for (int i = 7; i <12 ; i++) {
+            total2 = total2 + broad.get(i).getSquarePoint();
+        }
+        player1.setPlayerSquarePoint(total1);
+        player2.setPlayerSquarePoint(total2);
     }
 
 }
