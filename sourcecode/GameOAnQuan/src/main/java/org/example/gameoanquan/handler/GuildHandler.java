@@ -12,8 +12,6 @@ public class GuildHandler {
     @FXML
     void handleClose(ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
-
-
         stage.close();
     }
 

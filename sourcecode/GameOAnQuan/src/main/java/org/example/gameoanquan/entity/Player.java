@@ -1,5 +1,6 @@
 package org.example.gameoanquan.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
@@ -9,16 +10,14 @@ public class Player {
                                     // when game start square point = 25 ( 1 square = 5 point)
     private int borrowedGem;        // when game start, borrowed gem = 0
 
-    private int[] bigGemOwn = new int[2];          //  Squareid 1 and 6 . when start = 0
+    private int bigGemOwn;          //  Squareid 1 and 6 . when start = 0
 
     public Player(int playerId) {
         this.playerId = playerId;
         this.playerPoint = 0;
         this.playerSquarePoint = 25;
         this.borrowedGem = 0;
-        for (int i = 0; i < 2; i++) {
-            this.bigGemOwn[i] = 0;
-        }
+        this.bigGemOwn = 0;
     }
 
     public int getPlayerId() {
@@ -46,41 +45,53 @@ public class Player {
     }
 
     public int getBigGemOwnPoint() {
-        return this.bigGemOwn.length * 5;
+        return bigGemOwn * 5;
     }
+    public void setBigGemOwn()
+    {
+        bigGemOwn ++;
+    }
+
+
 
     public int spreadGem(int direction, int squareId, List<Square> broad) // tra ve square sau o duoc rai da cuoi cung
     {
         int spreadPoint = broad.get(squareId).getSquarePoint();
-        int currentSquareId = broad.get(squareId).getSquareId();
+        int currentSquareId = squareId;
         broad.get(squareId).setSquarePoint(0);
+        System.out.println("O lay len de rai: "+ squareId);
+        System.out.println(direction);
         if(direction == 0) // nguoc kim dong ho
         {
             currentSquareId = currentSquareId - 1;
             while(spreadPoint > 0)
             {
-                if(currentSquareId >= 1 && currentSquareId <= 5)
+                if(currentSquareId >= 0 && currentSquareId <= 4)
                 {
                     for (; spreadPoint > 0; spreadPoint--) {
+                        System.out.println("o duoc rai: " + currentSquareId);
+                        System.out.println("luong da con tren tay truoc khi rai: "+ spreadPoint);
+                        System.out.println("luong da con tren tay sau khi rai: "+ (spreadPoint - 1));
                         broad.get(currentSquareId).gemDrop();
-                        if(currentSquareId == 0 && spreadPoint > 1)
+                        currentSquareId --;
+                        if(currentSquareId == -1 && spreadPoint > 0)
                         {
                             currentSquareId = 11;
-                            break;
                         }
-                        currentSquareId --;
                     }
                 }
-                if(currentSquareId <= 11 && currentSquareId >= 7)
+                if(currentSquareId <= 10 && currentSquareId >= 6)
                 {
                     for (; spreadPoint > 0; spreadPoint--) {
+                        System.out.println("o duoc rai: " + currentSquareId);
+                        System.out.println("luong da con tren tay truoc khi rai: "+ spreadPoint);
+                        System.out.println("luong da con tren tay sau khi rai: "+ (spreadPoint - 1));
                         broad.get(currentSquareId).gemDrop();
-                        if(currentSquareId == 6 && spreadPoint > 1)
-                        {
-                            currentSquareId = 5;
-                            break;
-                        }
                         currentSquareId --;
+                        if(currentSquareId == -1 && spreadPoint > 0)
+                        {
+                            currentSquareId = 11;
+                        }
                     }
                 }
             }
@@ -90,28 +101,35 @@ public class Player {
             currentSquareId = currentSquareId +1;
             while(spreadPoint > 0)
             {
-                if(currentSquareId >= 1 && currentSquareId <= 5)
+                if(currentSquareId >= 2 && currentSquareId <= 6)
                 {
                     for (; spreadPoint > 0; spreadPoint--) {
+                        System.out.println("o duoc rai: " + currentSquareId);
+                        System.out.println("luong da con tren tay truoc khi rai: "+ spreadPoint);
+                        System.out.println("luong da con tren tay sau khi rai: "+ (spreadPoint - 1));
                         broad.get(currentSquareId).gemDrop();
-                        if(currentSquareId == 6 && spreadPoint > 1)
-                        {
-                            currentSquareId = 7;
-                            break;
-                        }
                         currentSquareId ++;
+                        if(currentSquareId == 12 && spreadPoint > 0)
+                        {
+                            currentSquareId = 0;
+                        }
                     }
                 }
-                if(currentSquareId <= 11 && currentSquareId >= 7)
+                if(currentSquareId <= 12 && currentSquareId >= 8)
                 {
+                    if(currentSquareId == 12){
+                        currentSquareId = 0;
+                    }
                     for (; spreadPoint > 0; spreadPoint--) {
+                        System.out.println("o duoc rai: " + currentSquareId);
+                        System.out.println("luong da con tren tay truoc khi rai: "+ spreadPoint);
+                        System.out.println("luong da con tren tay sau khi rai: "+ (spreadPoint - 1));
                         broad.get(currentSquareId).gemDrop();
-                        if(currentSquareId == 0 && spreadPoint > 1)
-                        {
-                            currentSquareId = 1;
-                            break;
-                        }
                         currentSquareId ++;
+                        if(currentSquareId == 12 && spreadPoint > 0)
+                        {
+                            currentSquareId = 0;
+                        }
                     }
                 }
             }

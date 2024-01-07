@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -27,6 +28,12 @@ public class HomeHandler {
     private Button exitButton;
     @FXML
     private Button playButton;
+    @FXML
+    private ImageView playButtonImage;
+    @FXML
+    private ImageView helpButtonImage;
+    @FXML
+    private ImageView quitButtonImage;
     @FXML
     private void playGame(ActionEvent event)
     {

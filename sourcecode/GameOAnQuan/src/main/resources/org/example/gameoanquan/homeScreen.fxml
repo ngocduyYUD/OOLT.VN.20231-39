@@ -17,8 +17,23 @@
             <Image url="@images/logo2.png" />
          </image>
       </ImageView>
-      <Button fx:id="playButton" layoutX="312.0" layoutY="207.0" mnemonicParsing="false" onAction="#playGame" text="Chơi Game" />
-      <Button fx:id="exitButton" layoutX="327.0" layoutY="297.0" mnemonicParsing="false" onAction="#exitGame" text="Thoát" />
-      <Button fx:id="helpButton" layoutX="312.0" layoutY="249.0" mnemonicParsing="false" onAction="#openGuild" text="Hướng dẫn" />
+      <ImageView fx:id="playButtonImage" fitHeight="44.0" fitWidth="110.0" layoutX="295.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/playButton.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="quitButtonImage" fitHeight="37.0" fitWidth="140.0" layoutX="306.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/quitButton.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="helpButtonImage" fitHeight="44.0" fitWidth="87.0" layoutX="306.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/helpButton.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="playButton" layoutX="312.0" layoutY="207.0" mnemonicParsing="false" onAction="#playGame" opacity="0.0" text="Chơi Game" />
+      <Button fx:id="helpButton" layoutX="311.0" layoutY="286.0" mnemonicParsing="false" onAction="#openGuild" opacity="0.0" text="Hướng dẫn" />
+      <Button fx:id="exitButton" layoutX="326.0" layoutY="249.0" mnemonicParsing="false" onAction="#exitGame" opacity="0.0" text="Thoát" />
    </children>
 </AnchorPane>

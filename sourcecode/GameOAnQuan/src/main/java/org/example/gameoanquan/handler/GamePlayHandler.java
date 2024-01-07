@@ -174,25 +174,26 @@ public class GamePlayHandler {
     private ImageView xIcon1;
     @FXML
     private ImageView xIcon2;
-
+    @FXML
+    private ImageView exitButtonImage;
     private Player player1;
     private Player player2;
     private List<Square> broadGame;
-    private static final GameController gameController = new GameController();
+    private static GameController gameController;
 
+    @FXML
     public void exitBroad(ActionEvent actionEvent) throws Exception {
+        Stage stage = (Stage) exitGame.getScene().getWindow();
+        stage.close();
         GameApplication.getInstance().backToMenu();
     }
 
-//    public GamePlayHandler() {
-//        this.initialize();
-//    }
-
+    @FXML
     public void initialize()
     {
-        if(gameController.isTurn())          //turn player 1
+        gameController = new GameController();
+        if(gameController.isTurn()  == true)          //turn player 1
         {
-            gameController.changeTurn();
             for(Pane square : Arrays.asList(square01, square02, square03, square04,square05))
             {
                 square.setDisable(false);
@@ -201,11 +202,10 @@ public class GamePlayHandler {
             {
                 square.setDisable(true);
             }
-            player1Avatar.setVisible(false);
-            player1Avatar.setVisible(true);
+            flag1.setVisible(true);
+            flag2.setVisible(false);
         }else                               // turn player 2
         {
-            gameController.changeTurn();
             for(Pane square : Arrays.asList(square01, square02, square03, square04,square05))
             {
                 square.setDisable(true);
@@ -214,8 +214,8 @@ public class GamePlayHandler {
             {
                 square.setDisable(false);
             }
-            player1Avatar.setVisible(true);
-            player1Avatar.setVisible(false);
+            flag1.setVisible(false);
+            flag2.setVisible(true);
         }
         player1 = gameController.getPlayer(1);
         player2 = gameController.getPlayer(2);
@@ -232,6 +232,7 @@ public class GamePlayHandler {
         ObservableList<Node> childrenElements = squarePane.getChildren();
 
         String squareId = squarePane.getId();
+        System.out.println(squareId);
         int square_num = Integer.parseInt(squareId.substring(squareId.length()-2));
         System.out.println(square_num);
 
@@ -255,9 +256,11 @@ public class GamePlayHandler {
 
     @FXML
     public void chooseRight(ActionEvent event) {
+        System.out.println("choose right direction");
         Pane squareChoose = (Pane) ((Node) event.getTarget()).getParent();
         String squareId = squareChoose.getId();
         int index = Integer.parseInt(squareId.substring(squareId.length()-2));
+        System.out.println(gameController.isTurn());
         if(gameController.isTurn())
         {
             gameController.gameMethod(gameController.getPlayer(1), 1, index);  //cùng chiều kim dh
@@ -265,56 +268,43 @@ public class GamePlayHandler {
         {
             gameController.gameMethod(gameController.getPlayer(2), 0, index);  // ngược
         }
-        player1 = gameController.getPlayer(1);
-        player2 = gameController.getPlayer(2);
-        broadGame = gameController.getBroad();
-        setSquareGem();
-        setPlayerPoint();
-        if(gameController.endGameCheck())
-        {
-            GameApplication.getInstance().endGameScreen(gameController.endGame());
-        }
+        reload();
     }
 
     @FXML
     public void chooseLeft(ActionEvent event) {
+        System.out.println("choose left direction");
         Pane squareChoose = (Pane) ((Node) event.getTarget()).getParent();
         String squareId = squareChoose.getId();
         int index = Integer.parseInt(squareId.substring(squareId.length()-2));
+        System.out.println(gameController.isTurn());
         if(gameController.isTurn())
         {
             gameController.gameMethod(gameController.getPlayer(1), 0, index);    //ngược
         }else
         {
+            System.out.println("player2");
             gameController.gameMethod(gameController.getPlayer(2), 1, index);   // cùng chiều
         }
-        player1 = gameController.getPlayer(1);
-        player2 = gameController.getPlayer(2);
-        broadGame = gameController.getBroad();
-        setSquareGem();
-        setPlayerPoint();
-        if(gameController.endGameCheck())
-        {
-            GameApplication.getInstance().endGameScreen(gameController.endGame());
-        }
+        reload();
     }
 
     public void setSquareGem()
     {
-        for (int i = 0; i < 12; i++) {
-            squarePoint0.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint1.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint2.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint3.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint4.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint5.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint6.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint7.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint8.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint9.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint10.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-            squarePoint11.setText(Integer.toString(broadGame.get(i).getSquarePoint()));
-        }
+
+            squarePoint0.setText(Integer.toString(broadGame.get(0).getSquarePoint()));
+            squarePoint1.setText(Integer.toString(broadGame.get(1).getSquarePoint()));
+            squarePoint2.setText(Integer.toString(broadGame.get(2).getSquarePoint()));
+            squarePoint3.setText(Integer.toString(broadGame.get(3).getSquarePoint()));
+            squarePoint4.setText(Integer.toString(broadGame.get(4).getSquarePoint()));
+            squarePoint5.setText(Integer.toString(broadGame.get(5).getSquarePoint()));
+            squarePoint6.setText(Integer.toString(broadGame.get(6).getSquarePoint()));
+            squarePoint7.setText(Integer.toString(broadGame.get(7).getSquarePoint()));
+            squarePoint8.setText(Integer.toString(broadGame.get(8).getSquarePoint()));
+            squarePoint9.setText(Integer.toString(broadGame.get(9).getSquarePoint()));
+            squarePoint10.setText(Integer.toString(broadGame.get(10).getSquarePoint()));
+            squarePoint11.setText(Integer.toString(broadGame.get(11).getSquarePoint()));
+
     }
 
     public void setPlayerPoint()
@@ -322,6 +312,55 @@ public class GamePlayHandler {
         playerPoint1.setText(Integer.toString(player1.getPlayerPoint()));
         playerPoint2.setText(Integer.toString(player2.getPlayerPoint()));
     }
-
+    public void reload()
+    {
+        player1 = gameController.getPlayer(1);
+        player2 = gameController.getPlayer(2);
+        broadGame = gameController.getBroad();
+        setSquareGem();
+        setPlayerPoint();
+        if(gameController.isTurn())          //turn player 1
+        {
+            for(Pane square : Arrays.asList(square01, square02, square03, square04,square05))
+            {
+                square.setDisable(false);
+            }
+            for(Pane square: Arrays.asList(square07, square08, square09, square10,square11))
+            {
+                square.setDisable(true);
+            }
+            flag1.setVisible(true);
+            flag2.setVisible(false);
+            if(player1.getPlayerSquarePoint() == 0)
+            {
+                gameController.autoAddGem(gameController.getPlayer(1));
+                player1 = gameController.getPlayer(1);
+                broadGame = gameController.getBroad();
+            }
+        }else                               // turn player 2
+        {
+            for(Pane square : Arrays.asList(square01, square02, square03, square04,square05))
+            {
+                square.setDisable(true);
+            }
+            for(Pane square: Arrays.asList(square07, square08, square09, square10,square11))
+            {
+                square.setDisable(false);
+            }
+            flag1.setVisible(false);
+            flag2.setVisible(true);
+            if(player2.getPlayerSquarePoint() == 0)
+            {
+                gameController.autoAddGem(gameController.getPlayer(2));
+                player2 = gameController.getPlayer(2);
+                broadGame = gameController.getBroad();
+            }
+        }
+        System.out.println("reload broad successfull");
+        if(gameController.endGameCheck())
+        {
+            GameApplication.getInstance().endGameScreen(gameController.endGame());
+        }
+    }
 
 }
