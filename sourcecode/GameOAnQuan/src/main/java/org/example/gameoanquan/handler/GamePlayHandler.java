@@ -185,6 +185,7 @@ public class GamePlayHandler {
     public void exitBroad(ActionEvent actionEvent) throws Exception {
         Stage stage = (Stage) exitGame.getScene().getWindow();
         stage.close();
+        GameApplication.getInstance().pauseMusic();
         GameApplication.getInstance().backToMenu();
     }
 
@@ -317,8 +318,6 @@ public class GamePlayHandler {
         player1 = gameController.getPlayer(1);
         player2 = gameController.getPlayer(2);
         broadGame = gameController.getBroad();
-        setSquareGem();
-        setPlayerPoint();
         if(gameController.isTurn())          //turn player 1
         {
             for(Pane square : Arrays.asList(square01, square02, square03, square04,square05))
@@ -356,9 +355,12 @@ public class GamePlayHandler {
                 broadGame = gameController.getBroad();
             }
         }
+        setSquareGem();
+        setPlayerPoint();
         System.out.println("reload broad successfull");
         if(gameController.endGameCheck())
         {
+            GameApplication.getInstance().pauseMusic();
             GameApplication.getInstance().endGameScreen(gameController.endGame());
         }
     }
