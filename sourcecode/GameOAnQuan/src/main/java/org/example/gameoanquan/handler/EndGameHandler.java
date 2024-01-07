@@ -42,6 +42,7 @@ public class EndGameHandler {
     }
 
     public void backMenu(ActionEvent actionEvent) throws Exception {
+        GameApplication.getInstance().pauseMusic();
         GameApplication.getInstance().backToMenu();
     }
 }

@@ -2,21 +2,18 @@ package org.example.gameoanquan.handler;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import org.example.gameoanquan.GameApplication;
-import org.example.gameoanquan.utlis.Configs;
 
-import java.io.IOException;
+import java.nio.file.Paths;
 
 public class HomeHandler {
     private Stage stage;
@@ -37,6 +34,7 @@ public class HomeHandler {
     @FXML
     private void playGame(ActionEvent event)
     {
+        GameApplication.getInstance().pauseMusic();
         GameApplication.getInstance().showGameScreen();
     }
     @FXML
