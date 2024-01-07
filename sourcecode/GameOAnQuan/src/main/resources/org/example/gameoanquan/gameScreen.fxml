@@ -15,185 +15,6 @@
             <Image url="@images/background.png" />
          </image>
       </ImageView>
-      <Button fx:id="exitGame" layoutX="635.0" layoutY="19.0" mnemonicParsing="false" onAction="#exitBroad" prefHeight="36.0" prefWidth="49.0" text="Exit" />
-      <Pane fx:id="square01" layoutX="184.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
-         <children>
-            <ImageView fx:id="directionR01" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
-               <image>
-                  <Image url="@images/greenArrowRight.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="directionL01" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="rightButton1" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Button fx:id="leftButton1" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Label fx:id="squarePoint1" layoutX="22.0" layoutY="27.0" text="point">
-               <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-               </font></Label>
-         </children>
-      </Pane>
-      <Label fx:id="playerPoint1" layoutX="343.0" layoutY="28.0" prefHeight="36.0" prefWidth="96.0" text="Player 1 point" textAlignment="CENTER">
-         <font>
-            <Font name="GS3 GT Flexa X Compressed Bold Italic" size="24.0" />
-         </font></Label>
-      <Label fx:id="playerPoint2" layoutX="340.0" layoutY="270.0" prefHeight="36.0" prefWidth="96.0" text="Player 2 point" textAlignment="CENTER">
-         <font>
-            <Font name="GS3 GT Flexa X Compressed Bold Italic" size="24.0" />
-         </font></Label>
-      <Label fx:id="squarePoint0" layoutX="142.0" layoutY="133.0" prefHeight="50.0" prefWidth="36.0" text="point">
-         <font>
-            <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="squarePoint6" layoutX="516.0" layoutY="135.0" prefHeight="42.0" prefWidth="36.0" text="point">
-         <font>
-            <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-         </font>
-      </Label>
-      <Pane fx:id="square02" layoutX="248.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
-         <children>
-            <ImageView fx:id="directionR02" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
-               <image>
-                  <Image url="@images/greenArrowRight.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="directionL02" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="rightButton2" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Button fx:id="leftButton2" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Label fx:id="squarePoint2" layoutX="22.0" layoutY="27.0" text="point">
-               <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-               </font></Label>
-         </children>
-      </Pane>
-      <Pane fx:id="square03" layoutX="312.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
-         <children>
-            <ImageView fx:id="directionR03" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
-               <image>
-                  <Image url="@images/greenArrowRight.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="directionL03" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="rightButton3" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Button fx:id="leftButton3" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Label fx:id="squarePoint3" layoutX="22.0" layoutY="27.0" text="point">
-               <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-               </font></Label>
-         </children>
-      </Pane>
-      <Pane fx:id="square04" layoutX="373.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
-         <children>
-            <ImageView fx:id="directionR04" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
-               <image>
-                  <Image url="@images/greenArrowRight.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="directionL04" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="rightButton4" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Button fx:id="leftButton4" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Label fx:id="squarePoint4" layoutX="22.0" layoutY="27.0" text="point">
-               <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-               </font></Label>
-         </children>
-      </Pane>
-      <Pane fx:id="square05" layoutX="434.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
-         <children>
-            <ImageView fx:id="directionR05" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
-               <image>
-                  <Image url="@images/greenArrowRight.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="directionL05" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="rightButton5" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Button fx:id="leftButton5" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Label fx:id="squarePoint5" layoutX="22.0" layoutY="27.0" text="point">
-               <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-               </font></Label>
-         </children>
-      </Pane>
-      <Pane fx:id="square07" layoutX="434.0" layoutY="156.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
-         <children>
-            <ImageView fx:id="directionR07" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
-               <image>
-                  <Image url="@images/greenArrowRight.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="directionL07" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="rightButton7" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Button fx:id="leftButton7" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Label fx:id="squarePoint7" layoutX="22.0" layoutY="27.0" text="point">
-               <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-               </font></Label>
-         </children>
-      </Pane>
-      <Pane fx:id="square08" layoutX="375.0" layoutY="160.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
-         <children>
-            <ImageView fx:id="directionR08" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
-               <image>
-                  <Image url="@images/greenArrowRight.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="directionL08" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="rightButton8" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Button fx:id="leftButton8" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Label fx:id="squarePoint8" layoutX="22.0" layoutY="27.0" text="point">
-               <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-               </font></Label>
-         </children>
-      </Pane>
-      <Pane fx:id="square09" layoutX="311.0" layoutY="160.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
-         <children>
-            <ImageView fx:id="directionR09" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
-               <image>
-                  <Image url="@images/greenArrowRight.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="directionL09" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="rightButton9" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Button fx:id="leftButton9" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Label fx:id="squarePoint9" layoutX="22.0" layoutY="27.0" text="point">
-               <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-               </font></Label>
-         </children>
-      </Pane>
-      <Pane fx:id="square10" layoutX="247.0" layoutY="160.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
-         <children>
-            <ImageView fx:id="directionR10" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
-               <image>
-                  <Image url="@images/greenArrowRight.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="directionL10" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="rightButton10" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Button fx:id="leftButton10" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Label fx:id="squarePoint10" layoutX="22.0" layoutY="27.0" text="point">
-               <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-               </font></Label>
-         </children>
-      </Pane>
-      <Pane fx:id="square11" layoutX="184.0" layoutY="160.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
-         <children>
-            <ImageView fx:id="directionR11" fitHeight="25.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
-               <image>
-                  <Image url="@images/greenArrowRight.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="directionL11" fitHeight="25.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="rightButton11" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Button fx:id="leftButton11" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" prefHeight="25.0" prefWidth="36.0" visible="false" />
-            <Label fx:id="squarePoint11" layoutX="22.0" layoutY="27.0" text="point">
-               <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
-               </font></Label>
-         </children>
-      </Pane>
       <ImageView fx:id="broad" fitHeight="457.0" fitWidth="734.0" layoutX="-22.0" layoutY="-47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/broad.png" />
@@ -229,16 +50,6 @@
             <Image url="@images/player2.png" />
          </image>
       </ImageView>
-      <Label fx:id="player1Name" layoutX="33.0" layoutY="98.0" text="Riven">
-         <font>
-            <Font name="GS3 GT Flexa X Compressed Black Italic" size="28.0" />
-         </font>
-      </Label>
-      <Label fx:id="player2Name" layoutX="606.0" layoutY="309.0" text="Ahri">
-         <font>
-            <Font name="GS3 GT Flexa X Compressed Black Italic" size="25.0" />
-         </font>
-      </Label>
       <ImageView fx:id="flag1" fitHeight="85.0" fitWidth="62.0" layoutX="99.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@images/flag.png" />
@@ -249,5 +60,229 @@
             <Image url="@images/flag.png" />
          </image>
       </ImageView>
+      <Label fx:id="playerPoint1" layoutX="343.0" layoutY="28.0" prefHeight="36.0" prefWidth="96.0" text="Player 1 point" textAlignment="CENTER">
+         <font>
+            <Font name="GS3 GT Flexa X Compressed Bold Italic" size="24.0" />
+         </font></Label>
+      <Label fx:id="playerPoint2" layoutX="340.0" layoutY="270.0" prefHeight="36.0" prefWidth="96.0" text="Player 2 point" textAlignment="CENTER">
+         <font>
+            <Font name="GS3 GT Flexa X Compressed Bold Italic" size="24.0" />
+         </font></Label>
+      <Label fx:id="player1Name" layoutX="33.0" layoutY="98.0" text="Riven">
+         <font>
+            <Font name="GS3 GT Flexa X Compressed Black Italic" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="player2Name" layoutX="606.0" layoutY="309.0" text="Ahri">
+         <font>
+            <Font name="GS3 GT Flexa X Compressed Black Italic" size="25.0" />
+         </font>
+      </Label>
+      <Pane fx:id="square01" layoutX="184.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
+         <children>
+            <ImageView fx:id="directionR01" fitHeight="22.0" fitWidth="36.0" layoutX="49.0" layoutY="26.0" visible="false">
+               <image>
+                  <Image url="@images/arrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL01" fitHeight="22.0" fitWidth="36.0" layoutX="-22.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/arrowLeft.png" />
+               </image></ImageView>
+            <Label fx:id="squarePoint1" layoutX="22.0" layoutY="27.0" text="point">
+               <font>
+                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="rightButton1" layoutX="49.0" layoutY="26.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="22.0" prefWidth="30.0" visible="false" />
+            <Button fx:id="leftButton1" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="20.0" prefWidth="30.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="square02" layoutX="248.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
+         <children>
+            <ImageView fx:id="directionL02" fitHeight="22.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/arrowLeft.png" />
+               </image></ImageView>
+            <ImageView fx:id="directionR02" fitHeight="22.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/arrowRight.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="squarePoint2" layoutX="22.0" layoutY="27.0" text="point">
+               <font>
+                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="rightButton2" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton2" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="square03" layoutX="312.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
+         <children>
+            <ImageView fx:id="directionR03" fitHeight="22.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/arrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL03" fitHeight="22.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/arrowLeft.png" />
+               </image></ImageView>
+            <Label fx:id="squarePoint3" layoutX="22.0" layoutY="27.0" text="point">
+               <font>
+                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="rightButton3" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton3" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="square04" layoutX="373.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
+         <children>
+            <ImageView fx:id="directionR04" fitHeight="22.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/arrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL04" fitHeight="22.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/arrowLeft.png" />
+               </image></ImageView>
+            <Label fx:id="squarePoint4" layoutX="22.0" layoutY="27.0" text="point">
+               <font>
+                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="rightButton4" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton4" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="square05" layoutX="434.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
+         <children>
+            <ImageView fx:id="directionR05" fitHeight="22.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/arrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL05" fitHeight="22.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/arrowLeft.png" />
+               </image></ImageView>
+            <Label fx:id="squarePoint5" layoutX="22.0" layoutY="27.0" text="point">
+               <font>
+                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="rightButton5" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton5" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="square07" layoutX="434.0" layoutY="156.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
+         <children>
+            <ImageView fx:id="directionR07" fitHeight="22.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/arrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL07" fitHeight="22.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/arrowLeft.png" />
+               </image></ImageView>
+            <Label fx:id="squarePoint7" layoutX="22.0" layoutY="27.0" text="point">
+               <font>
+                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="rightButton7" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton7" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="square08" layoutX="375.0" layoutY="160.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
+         <children>
+            <ImageView fx:id="directionR08" fitHeight="22.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/arrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL08" fitHeight="22.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/arrowLeft.png" />
+               </image></ImageView>
+            <Label fx:id="squarePoint8" layoutX="22.0" layoutY="27.0" text="point">
+               <font>
+                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="rightButton8" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton8" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="square09" layoutX="311.0" layoutY="160.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
+         <children>
+            <ImageView fx:id="directionR09" fitHeight="22.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/arrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL09" fitHeight="22.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/arrowLeft.png" />
+               </image></ImageView>
+            <Label fx:id="squarePoint9" layoutX="22.0" layoutY="27.0" text="point">
+               <font>
+                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="rightButton9" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton9" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="square10" layoutX="247.0" layoutY="160.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
+         <children>
+            <ImageView fx:id="directionR10" fitHeight="22.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/arrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL10" fitHeight="22.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/arrowLeft.png" />
+               </image></ImageView>
+            <Label fx:id="squarePoint10" layoutX="22.0" layoutY="27.0" text="point">
+               <font>
+                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="rightButton10" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton10" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="square11" layoutX="184.0" layoutY="160.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
+         <children>
+            <ImageView fx:id="directionR11" fitHeight="22.0" fitWidth="36.0" layoutX="49.0" layoutY="23.0" visible="false">
+               <image>
+                  <Image url="@images/arrowRight.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="directionL11" fitHeight="22.0" fitWidth="36.0" layoutX="-22.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/arrowLeft.png" />
+               </image></ImageView>
+            <Label fx:id="squarePoint11" layoutX="22.0" layoutY="27.0" text="point">
+               <font>
+                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+               </font></Label>
+            <Button fx:id="rightButton11" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+            <Button fx:id="leftButton11" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
+         </children>
+      </Pane>
+      <ImageView fx:id="exitButtonImage" fitHeight="42.0" fitWidth="96.0" layoutX="592.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/quitButton.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="squarePoint0" layoutX="142.0" layoutY="133.0" prefHeight="50.0" prefWidth="36.0" text="point">
+         <font>
+            <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="squarePoint6" layoutX="516.0" layoutY="135.0" prefHeight="42.0" prefWidth="36.0" text="point">
+         <font>
+            <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="exitGame" layoutX="600.0" layoutY="19.0" mnemonicParsing="false" onAction="#exitBroad" opacity="0.0" prefHeight="36.0" prefWidth="85.0" text="Exit" />
    </children>
 </AnchorPane>
