@@ -20,22 +20,22 @@
             <Image url="@images/broad.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="gemIcon1" fitHeight="36.0" fitWidth="62.0" layoutX="281.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="gemIcon1" fitHeight="36.0" fitWidth="62.0" layoutX="291.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/point.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="gemIcon2" fitHeight="36.0" fitWidth="62.0" layoutX="281.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="gemIcon2" fitHeight="36.0" fitWidth="62.0" layoutX="291.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/point.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="319.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" fx:id="xIcon1">
+      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="332.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" fx:id="xIcon1">
          <image>
             <Image url="@images/ximage.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="319.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true" fx:id="xIcon2">
+      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="332.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true" fx:id="xIcon2">
          <image>
             <Image url="@images/ximage.png" />
          </image>
@@ -60,22 +60,22 @@
             <Image url="@images/flag.png" />
          </image>
       </ImageView>
-      <Label fx:id="playerPoint1" layoutX="343.0" layoutY="28.0" prefHeight="36.0" prefWidth="96.0" text="Player 1 point" textAlignment="CENTER">
+      <Label fx:id="playerGems1" layoutX="356.0" layoutY="28.0" prefHeight="36.0" prefWidth="96.0" text="Gems" textAlignment="CENTER">
          <font>
-            <Font name="GS3 GT Flexa X Compressed Bold Italic" size="24.0" />
+            <Font name="SVN-Coder'sCrux" size="32.0" />
          </font></Label>
-      <Label fx:id="playerPoint2" layoutX="340.0" layoutY="270.0" prefHeight="36.0" prefWidth="96.0" text="Player 2 point" textAlignment="CENTER">
+      <Label fx:id="playerGems2" layoutX="356.0" layoutY="269.0" prefHeight="36.0" prefWidth="96.0" text="Gems" textAlignment="CENTER">
          <font>
-            <Font name="GS3 GT Flexa X Compressed Bold Italic" size="24.0" />
+            <Font name="SVN-Coder'sCrux" size="32.0" />
          </font></Label>
       <Label fx:id="player1Name" layoutX="33.0" layoutY="98.0" text="Riven">
          <font>
-            <Font name="GS3 GT Flexa X Compressed Black Italic" size="28.0" />
+            <Font name="SVN-Coder'sCrux" size="34.0" />
          </font>
       </Label>
       <Label fx:id="player2Name" layoutX="606.0" layoutY="309.0" text="Ahri">
          <font>
-            <Font name="GS3 GT Flexa X Compressed Black Italic" size="25.0" />
+            <Font name="SVN-Coder'sCrux" size="34.0" />
          </font>
       </Label>
       <Pane fx:id="square01" layoutX="184.0" layoutY="90.0" onMouseClicked="#squareChoose" prefHeight="70.0" prefWidth="62.0">
@@ -89,9 +89,9 @@
                <image>
                   <Image url="@images/arrowLeft.png" />
                </image></ImageView>
-            <Label fx:id="squarePoint1" layoutX="22.0" layoutY="27.0" text="point">
+            <Label fx:id="squarePoint1" layoutX="22.0" layoutY="27.0" text="p">
                <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+                  <Font name="SVN-Coder'sCrux" size="34.0" />
                </font></Label>
             <Button fx:id="rightButton1" layoutX="49.0" layoutY="26.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="22.0" prefWidth="30.0" visible="false" />
             <Button fx:id="leftButton1" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="20.0" prefWidth="30.0" visible="false" />
@@ -108,9 +108,9 @@
                   <Image url="@images/arrowRight.png" />
                </image>
             </ImageView>
-            <Label fx:id="squarePoint2" layoutX="22.0" layoutY="27.0" text="point">
+            <Label fx:id="squarePoint2" layoutX="22.0" layoutY="27.0" text="p">
                <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+                  <Font name="SVN-Coder'sCrux" size="34.0" />
                </font></Label>
             <Button fx:id="rightButton2" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
             <Button fx:id="leftButton2" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
@@ -127,9 +127,9 @@
                <image>
                   <Image url="@images/arrowLeft.png" />
                </image></ImageView>
-            <Label fx:id="squarePoint3" layoutX="22.0" layoutY="27.0" text="point">
+            <Label fx:id="squarePoint3" layoutX="22.0" layoutY="27.0" text="P">
                <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+                  <Font name="SVN-Coder'sCrux" size="34.0" />
                </font></Label>
             <Button fx:id="rightButton3" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
             <Button fx:id="leftButton3" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
@@ -146,9 +146,9 @@
                <image>
                   <Image url="@images/arrowLeft.png" />
                </image></ImageView>
-            <Label fx:id="squarePoint4" layoutX="22.0" layoutY="27.0" text="point">
+            <Label fx:id="squarePoint4" layoutX="22.0" layoutY="27.0" text="P">
                <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+                  <Font name="SVN-Coder'sCrux" size="34.0" />
                </font></Label>
             <Button fx:id="rightButton4" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
             <Button fx:id="leftButton4" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
@@ -165,9 +165,9 @@
                <image>
                   <Image url="@images/arrowLeft.png" />
                </image></ImageView>
-            <Label fx:id="squarePoint5" layoutX="22.0" layoutY="27.0" text="point">
+            <Label fx:id="squarePoint5" layoutX="22.0" layoutY="27.0" text="p">
                <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+                  <Font name="SVN-Coder'sCrux" size="34.0" />
                </font></Label>
             <Button fx:id="rightButton5" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
             <Button fx:id="leftButton5" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
@@ -184,9 +184,9 @@
                <image>
                   <Image url="@images/arrowLeft.png" />
                </image></ImageView>
-            <Label fx:id="squarePoint7" layoutX="22.0" layoutY="27.0" text="point">
+            <Label fx:id="squarePoint7" layoutX="22.0" layoutY="27.0" text="P">
                <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+                  <Font name="SVN-Coder'sCrux" size="34.0" />
                </font></Label>
             <Button fx:id="rightButton7" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
             <Button fx:id="leftButton7" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
@@ -203,9 +203,9 @@
                <image>
                   <Image url="@images/arrowLeft.png" />
                </image></ImageView>
-            <Label fx:id="squarePoint8" layoutX="22.0" layoutY="27.0" text="point">
+            <Label fx:id="squarePoint8" layoutX="22.0" layoutY="27.0" text="P">
                <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+                  <Font name="SVN-Coder'sCrux" size="34.0" />
                </font></Label>
             <Button fx:id="rightButton8" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
             <Button fx:id="leftButton8" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
@@ -222,9 +222,9 @@
                <image>
                   <Image url="@images/arrowLeft.png" />
                </image></ImageView>
-            <Label fx:id="squarePoint9" layoutX="22.0" layoutY="27.0" text="point">
+            <Label fx:id="squarePoint9" layoutX="22.0" layoutY="27.0" text="P">
                <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+                  <Font name="SVN-Coder'sCrux" size="34.0" />
                </font></Label>
             <Button fx:id="rightButton9" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
             <Button fx:id="leftButton9" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
@@ -241,9 +241,9 @@
                <image>
                   <Image url="@images/arrowLeft.png" />
                </image></ImageView>
-            <Label fx:id="squarePoint10" layoutX="22.0" layoutY="27.0" text="point">
+            <Label fx:id="squarePoint10" layoutX="22.0" layoutY="27.0" text="P">
                <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+                  <Font name="SVN-Coder'sCrux" size="34.0" />
                </font></Label>
             <Button fx:id="rightButton10" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
             <Button fx:id="leftButton10" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
@@ -260,9 +260,9 @@
                <image>
                   <Image url="@images/arrowLeft.png" />
                </image></ImageView>
-            <Label fx:id="squarePoint11" layoutX="22.0" layoutY="27.0" text="point">
+            <Label fx:id="squarePoint11" layoutX="22.0" layoutY="27.0" text="P">
                <font>
-                  <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+                  <Font name="SVN-Coder'sCrux" size="34.0" />
                </font></Label>
             <Button fx:id="rightButton11" layoutX="49.0" layoutY="23.0" mnemonicParsing="false" onAction="#chooseRight" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
             <Button fx:id="leftButton11" layoutX="-20.0" layoutY="22.0" mnemonicParsing="false" onAction="#chooseLeft" opacity="0.0" prefHeight="25.0" prefWidth="36.0" visible="false" />
@@ -273,16 +273,26 @@
             <Image url="@images/quitButton.png" />
          </image>
       </ImageView>
-      <Label fx:id="squarePoint0" layoutX="142.0" layoutY="133.0" prefHeight="50.0" prefWidth="36.0" text="point">
+      <Label fx:id="squarePoint0" layoutX="142.0" layoutY="133.0" prefHeight="50.0" prefWidth="36.0" text="P">
          <font>
-            <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+            <Font name="SVN-Coder'sCrux" size="34.0" />
          </font>
       </Label>
-      <Label fx:id="squarePoint6" layoutX="516.0" layoutY="135.0" prefHeight="42.0" prefWidth="36.0" text="point">
+      <Label fx:id="squarePoint6" layoutX="516.0" layoutY="135.0" prefHeight="42.0" prefWidth="36.0" text="p">
          <font>
-            <Font name="GS3 GT Flexa X Compressed Bold" size="20.0" />
+            <Font name="SVN-Coder'sCrux" size="34.0" />
          </font>
       </Label>
       <Button fx:id="exitGame" layoutX="600.0" layoutY="19.0" mnemonicParsing="false" onAction="#exitBroad" opacity="0.0" prefHeight="36.0" prefWidth="85.0" text="Exit" />
+      <Label fx:id="player1Score" layoutX="26.0" layoutY="147.0" text="Score">
+         <font>
+            <Font name="SVN-Coder'sCrux" size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="player2Score" layoutX="592.0" layoutY="148.0" text="Score">
+         <font>
+            <Font name="SVN-Coder'sCrux" size="32.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
