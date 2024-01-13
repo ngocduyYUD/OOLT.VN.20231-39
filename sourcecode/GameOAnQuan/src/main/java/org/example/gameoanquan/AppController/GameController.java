@@ -1,6 +1,10 @@
 package org.example.gameoanquan.AppController;
-import org.example.gameoanquan.entity.Player;
-import org.example.gameoanquan.entity.Square;
+import org.example.gameoanquan.entity.Gem.BigGem;
+import org.example.gameoanquan.entity.Gem.Gem;
+import org.example.gameoanquan.entity.Gem.SmallGem;
+import org.example.gameoanquan.entity.broad.Broad;
+import org.example.gameoanquan.entity.player.Player;
+import org.example.gameoanquan.entity.broad.Square;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,19 +14,14 @@ import java.util.List;
 public class GameController {
     private Player player1;
     private Player player2;
-    private List<Square> broad = new ArrayList<>();
+    private Broad broad;
     private boolean turn;
-    private boolean bigGem1Check;
-    private boolean bigGem2Check;
+
     public GameController() {
         this.player1 = new Player(1);
         this.player2 = new Player(2);
-        for (int i = 0; i <= 11; i++) {
-            broad.add(new Square(i));
-        }
+        broad = new Broad();
         this.turn = true;
-        this.bigGem1Check = true;
-        this.bigGem2Check = true;
         setTurn();
     }
     /*
@@ -30,7 +29,7 @@ public class GameController {
      */
     public void gameMethod(Player player, int direction, int pickedSquare)
     {
-        if(broad.get(pickedSquare).getSquarePoint() == 0)
+        if(broad.getSquareList().get(pickedSquare).getGemsInSquare() == null)
         {
             System.out.println("cant pick empty square");
         }
@@ -41,19 +40,15 @@ public class GameController {
                 currentSquareId = player.spreadGem(direction, spreadSquare, broad);
                 spreadSquare = currentSquareId;
                 System.out.println("square tiep theo (current): " + currentSquareId);
-                if(playerPointCaculate(currentSquareId, player, direction) == true)  //neu co su thay doi ve diem so
+                if(playerTakeGem(currentSquareId, player, direction))  //neu co su thay doi ve diem so
                 {
                     break;
                 }
             }while (stopSpreadGem(currentSquareId));   //neu khong the rai da nua
-            updateSquarePoint();                       // sau moi lan rai da, update lai tong diem ben phan o cua nguoi choi
             printBroad();
-            if(!endGameCheck())
-            {
                 System.out.println("change turn");
                 changeTurn();
                 System.out.println(isTurn());
-            }
         }
     }
 
@@ -69,11 +64,11 @@ public class GameController {
         {
             nextSquareId = 0;
         }
-        if(broad.get(currentSquareId).getSquarePoint() == 0 && broad.get(nextSquareId).getSquarePoint() == 0)
+        if(broad.getSquareList().get(currentSquareId).getGemsInSquare().isEmpty() && broad.getSquareList().get(nextSquareId).getGemsInSquare().isEmpty())
         {
             return false;
         }
-        if(broad.get(currentSquareId).getSquarePoint() == 0 && broad.get(prevSquareId).getSquarePoint() == 0)
+        if(broad.getSquareList().get(currentSquareId).getGemsInSquare().isEmpty() && broad.getSquareList().get(prevSquareId).getGemsInSquare().isEmpty())
         {
             return false;
         }
@@ -86,9 +81,9 @@ public class GameController {
         ô vừa ăn.
         vòng while chạy để kiểm tra xem còn ăn được nữa không.
      */
-    public boolean playerPointCaculate(int currentSquareId, Player player, int direction)   // tinh toan diem nguoi choi sau mot lan an quan
+    public boolean playerTakeGem(int currentSquareId, Player player, int direction)   // nguoi choi an Gem
     {
-        if(broad.get(currentSquareId).getSquarePoint() != 0)
+        if(!broad.getSquareList().get(currentSquareId).getGemsInSquare().isEmpty())
         {
             return false;
         }
@@ -103,19 +98,9 @@ public class GameController {
                 {
                     prevSquareId = 11;
                 }
-                if (broad.get(currentSquareId).getSquarePoint() == 0 && broad.get(prevSquareId).getSquarePoint() != 0) {
-                    player.setPlayerPoint(player.getPlayerPoint() + broad.get(prevSquareId).getSquarePoint());
-                    broad.get(prevSquareId).setSquarePoint(0);
-                    if(prevSquareId == 0 && bigGem1Check)
-                    {
-                        player.setBigGemOwn();
-                        bigGem1Check = false;
-                    }
-                    if(prevSquareId == 6 && bigGem2Check)
-                    {
-                        player.setBigGemOwn();
-                        bigGem2Check = false;
-                    }
+                if (broad.getSquareList().get(currentSquareId).getGemsInSquare().isEmpty() && !broad.getSquareList().get(prevSquareId).getGemsInSquare().isEmpty()) {
+                    player.takeGem(broad.getSquareList().get(prevSquareId).getGemsInSquare());
+                    broad.getSquareList().get(prevSquareId).getGemsInSquare().clear();
                     currentSquareId = currentSquareId - 2;
                     if (currentSquareId == -1)
                     {
@@ -125,6 +110,7 @@ public class GameController {
                     {
                         currentSquareId = 10;
                     }
+                    System.out.println(prevSquareId);
                     check = true;
                 }else {
                     break;
@@ -139,20 +125,9 @@ public class GameController {
                 {
                     nextSquareId = 0;
                 }
-                if (broad.get(currentSquareId).getSquarePoint() == 0 && broad.get(nextSquareId).getSquarePoint() != 0) {
-                    player.setPlayerPoint(player.getPlayerPoint() + broad.get(nextSquareId).getSquarePoint());
-                    broad.get(nextSquareId).setSquarePoint(0);
-                    System.out.println("asd");
-                    if(nextSquareId == 0 && bigGem1Check)
-                    {
-                        player.setBigGemOwn();
-                        bigGem1Check = false;
-                    }
-                    if(nextSquareId == 6 && bigGem2Check)
-                    {
-                        player.setBigGemOwn();
-                        bigGem2Check = false;
-                    }
+                if (broad.getSquareList().get(currentSquareId).getGemsInSquare().isEmpty() && !broad.getSquareList().get(nextSquareId).getGemsInSquare().isEmpty()) {
+                    player.takeGem(broad.getSquareList().get(nextSquareId).getGemsInSquare());
+                    broad.getSquareList().get(nextSquareId).getGemsInSquare().clear();
                     currentSquareId = currentSquareId + 2;
                     if(currentSquareId == 12)
                     {
@@ -174,35 +149,78 @@ public class GameController {
 
     public void autoAddGem(Player player)            //tu dong them da khi nguoi choi het da trong square
     {
-        int playerSmallGemPoint = player.getPlayerPoint() - player.getBigGemOwnPoint();
-        if(player.getPlayerId() == 1)
+        List<Gem> playerSmallGems = new ArrayList<>();
+        for(Gem gem: player.getGems())
         {
-            for (int i = 1; i < 6; i++) {
-                broad.get(i).setSquarePoint(1);
-            }
-        } else if (player.getPlayerId() == 2) {
-            for (int i = 7; i < 12; i++) {
-                broad.get(i).setSquarePoint(1);
+            if(gem.getPoint() == 1)
+            {
+                playerSmallGems.add(gem);
             }
         }
-        if(playerSmallGemPoint < 5)
+        if(playerSmallGems.size() < 5)
         {
+            int gemNeedBorrow = 5 - playerSmallGems.size();
             if(player.getPlayerId() == 1)
             {
-                player.borrowGem(2, 5 - playerSmallGemPoint);
-                player2.borrowGem(1, - 5 + playerSmallGemPoint);
-                player.setPlayerPoint(player.getPlayerPoint() - playerSmallGemPoint);
-                player2.setPlayerPoint(player2.getPlayerPoint() +5 - playerSmallGemPoint);
+                for (Gem gem: player2.getGems()) {
+                    if(gem.getPoint() == 1)
+                    {
+                        player.borrowGem(gem);
+                        gemNeedBorrow--;
+                    }
+                    if (gemNeedBorrow == 0)
+                    {
+                        break;
+                    }
+                }
             } else if (player.getPlayerId() == 2) {
-                player.borrowGem(1, 5 - playerSmallGemPoint);
-                player1.borrowGem(2, - 5 + playerSmallGemPoint);
-                player.setPlayerPoint(player.getPlayerPoint() - playerSmallGemPoint);
-                player1.setPlayerPoint(player1.getPlayerPoint() +5 - playerSmallGemPoint);
+                for (Gem gem: player1.getGems()) {
+                    if(gem.getPoint() == 1)
+                    {
+                        player.borrowGem(gem);
+                        gemNeedBorrow--;
+                    }
+                    if (gemNeedBorrow == 0)
+                    {
+                        break;
+                    }
+                }
             }
         }
         else
         {
-            player.setPlayerPoint(player.getPlayerPoint() - 5);
+            if(player.getPlayerId() == 1){
+                int squareId = 5;
+                for(int i = 0; i < player.getGems().size(); i++)
+                {
+                    if(player.getGems().get(i).getPoint() == 1)
+                    {
+                        broad.getSquareList().get(squareId).gemDrop(player.getGems().get(i));
+                        player.getGems().remove(i);
+                        squareId--;
+                    }
+                    if (squareId == 0)
+                    {
+                        break;
+                    }
+                }
+            }
+            else {
+                int squareId = 11;
+                for(int i = 0; i < player.getGems().size(); i++)
+                {
+                    if(player.getGems().get(i).getPoint() == 1)
+                    {
+                        broad.getSquareList().get(squareId).gemDrop(player.getGems().get(i));
+                        player.getGems().remove(i);
+                        squareId--;
+                    }
+                    if (squareId == 6)
+                    {
+                        break;
+                    }
+                }
+            }
         }
     }
 
@@ -214,7 +232,7 @@ public class GameController {
         }
         return this.player2;
     }
-    public List<Square> getBroad()
+    public Broad getBroad()
     {
         return this.broad;
     }
@@ -234,34 +252,55 @@ public class GameController {
 
     public boolean endGameCheck()
     {
-        if(broad.get(0).getSquarePoint() == 0 && broad.get(6).getSquarePoint() == 0)     //khi het ca 2 quan, dan ben nao thi la diem ben do
+        if(broad.getSquareList().get(0).getGemsInSquare().isEmpty() && broad.getSquareList().get(6).getGemsInSquare().isEmpty())     //khi het ca 2 quan, dan ben nao thi la diem ben do
         {
-            player1.setPlayerPoint(player1.getPlayerPoint() + player1.getPlayerSquarePoint() - player1.getBorrowedGem());
-            player2.setPlayerPoint(player2.getPlayerPoint()+player2.getPlayerSquarePoint() - player2.getBorrowedGem());
             return true;
         }
         return false;
     }
     public int endGame()
     {
-        if(player1.getPlayerPoint() > player2.getPlayerPoint())
+        if(playerPointCaculate(player1) > playerPointCaculate(player2))
         {
-            return 1;
+            return player1.getPlayerId();
         }
-        return 2;
+        return player2.getPlayerId();
     }
-    public void updateSquarePoint()
+
+    public int playerPointCaculate(Player player)
     {
-        int total1 = 0;
-        int total2 = 0;
-        for (int i = 1; i < 6; i++) {
-            total1 = total1 + broad.get(i).getSquarePoint();
+        int playerPoint = 0;
+        for (Gem gem: player.getGems())
+        {
+            playerPoint = playerPoint + gem.getPoint();
         }
-        for (int i = 7; i <12 ; i++) {
-            total2 = total2 + broad.get(i).getSquarePoint();
+        for(Gem gem: player.getBorrowedGems())
+        {
+            playerPoint = playerPoint - gem.getPoint();
         }
-        player1.setPlayerSquarePoint(total1);
-        player2.setPlayerSquarePoint(total2);
+        return playerPoint;
+    }
+    public boolean isPlayerSquareEmpty(Player player)
+    {
+        int playerSquareGems = 0;
+        if(player.getPlayerId() == 1)
+        {
+            for (int i = 1; i < 6; i++) {
+                if(!broad.getSquareList().get(i).getGemsInSquare().isEmpty()){
+                    return false;
+                }
+            }
+        }
+        if(player.getPlayerId() == 2)
+        {
+            for (int i = 7; i < 12; i++) {
+                if(!broad.getSquareList().get(i).getGemsInSquare().isEmpty())
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public void setTurn()
@@ -272,16 +311,13 @@ public class GameController {
     {
         System.out.print("  ");
         for (int i = 1; i < 6; i++) {
-            System.out.print("|"+broad.get(i).getSquarePoint() + "|");
+            System.out.print("|"+broad.getSquareList().get(i).getGemsInSquare().size() + "|");
         }
-        System.out.print("\n|"+ broad.get(0).getSquarePoint() + "|" + "              " + "|"+broad.get(6).getSquarePoint() + "|\n");
+        System.out.print("\n|"+ broad.getSquareList().get(0).getGemsInSquare().size() + "|" + "              " + "|"+broad.getSquareList().get(6).getGemsInSquare().size() + "|\n");
         System.out.print("  ");
         for (int i = 11; i > 6; i--) {
-            System.out.print("|"+broad.get(i).getSquarePoint() + "|");
+            System.out.print("|"+broad.getSquareList().get(i).getGemsInSquare().size() + "|");
         }
-
-        System.out.println("\nplayer1 = " + player1.getPlayerPoint());
-        System.out.println("player2 = " + player2.getPlayerPoint());
     }
 
 }
