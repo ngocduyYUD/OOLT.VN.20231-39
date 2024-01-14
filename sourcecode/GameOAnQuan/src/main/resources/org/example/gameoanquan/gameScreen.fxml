@@ -284,12 +284,12 @@
          </font>
       </Label>
       <Button fx:id="exitGame" layoutX="600.0" layoutY="19.0" mnemonicParsing="false" onAction="#exitBroad" opacity="0.0" prefHeight="36.0" prefWidth="85.0" text="Exit" />
-      <Label fx:id="player1Score" layoutX="26.0" layoutY="147.0" text="Score">
+      <Label fx:id="player1Score" layoutX="34.0" layoutY="124.0" text="Score">
          <font>
             <Font name="SVN-Coder'sCrux" size="32.0" />
          </font>
       </Label>
-      <Label fx:id="player2Score" layoutX="592.0" layoutY="148.0" text="Score">
+      <Label fx:id="player2Score" layoutX="592.0" layoutY="191.0" text="Score">
          <font>
             <Font name="SVN-Coder'sCrux" size="32.0" />
          </font>
