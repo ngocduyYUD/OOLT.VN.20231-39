@@ -3,4 +3,5 @@
 ## Thành Viên: 
 - Bùi Ngọc Duy - 20194537 - Game Logic
 - Chu Văn Thành - 20194673 - thiết kế UIUX 
-- Vũ Anh Minh - 20194626 - Khởi tạo các Entity 
+- Vũ Anh Minh - 20194626 - Khởi tạo các Entity
+- link demo: https://youtu.be/tnXdyxKGD1c
